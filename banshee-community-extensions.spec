@@ -1,6 +1,6 @@
 %define name banshee-community-extensions
-%define version 1.5.5
-%define release %mkrel 2
+%define version 1.6.0
+%define release %mkrel 1
 
 Summary: Contributed extensions for the Banshee media player
 Name: %{name}
