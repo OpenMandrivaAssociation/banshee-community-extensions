@@ -29,6 +29,8 @@ BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: intltool
 BuildRequires: locales-en
+#gw for the git snapshot:
+BuildRequires: libGConf2-devel
 Provides: banshee-mirage
 Obsoletes: banshee-mirage
 Suggests: gstreamer0.10-plugins-ugly
