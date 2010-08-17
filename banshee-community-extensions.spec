@@ -28,6 +28,7 @@ BuildRequires: sqlite3-devel
 BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: libsamplerate-devel
 BuildRequires: intltool
+BuildRequires: gnome-doc-utils
 BuildRequires: locales-en
 #gw for the git snapshot:
 BuildRequires: libGConf2-devel
