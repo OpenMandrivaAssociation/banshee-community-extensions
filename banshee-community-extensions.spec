@@ -18,7 +18,11 @@ BuildRequires: banshee-devel >= 1.5.5
 BuildRequires: mono-devel
 BuildRequires: lirc-devel
 BuildRequires: gnome-sharp2-devel
+%if %mdvver >= 201100
+BuildRequires: notify-sharp-devel
+%else
 BuildRequires: notify-sharp
+%endif
 BuildRequires: webkit-sharp-devel
 #gw not packaged:
 #BuildRequires: clutter-sharp
