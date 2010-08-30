@@ -1,14 +1,13 @@
 %define name banshee-community-extensions
 %define version 1.7.4
-%define git 20100816
-%define release %mkrel -c %git 1
+%define release %mkrel 1
 
 Summary: Contributed extensions for the Banshee media player
 Name: %{name}
 Version: %{version}
 Release: %{release}
-#Source0: http://download.banshee-project.org/%name/%version/%{name}-%{version}.tar.bz2
-Source0: %name-%git.tar.xz
+Source0: http://download.banshee.fm/%name/%version/%{name}-%{version}.tar.bz2
+#Source0: %name-%git.tar.xz
 #gw mirage is GPL, all others MIT
 License: MIT and GPLv2+
 Group: Sound
@@ -66,8 +65,7 @@ probably change over time).
    stream their tracks and share what you're listening to.
 
 %prep
-%setup -q -n %name
-./autogen.sh
+%setup -q
 
 %build
 #gw to make mcs accept Unicode symbols
