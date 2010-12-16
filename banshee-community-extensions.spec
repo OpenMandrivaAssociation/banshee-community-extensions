@@ -7,6 +7,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://download.banshee.fm/%name/%version/%{name}-%{version}.tar.bz2
+Patch0: banshee-community-extensions-libgl.patch
 #Source0: %name-%git.tar.xz
 #gw mirage is GPL, all others MIT
 License: MIT and GPLv2+
@@ -67,6 +68,7 @@ probably change over time).
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 #gw to make mcs accept Unicode symbols
