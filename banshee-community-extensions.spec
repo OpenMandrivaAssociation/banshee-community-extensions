@@ -1,6 +1,6 @@
 %define name banshee-community-extensions
 %define version 1.8.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Contributed extensions for the Banshee media player
 Name: %{name}
@@ -23,8 +23,8 @@ BuildRequires: notify-sharp-devel
 BuildRequires: notify-sharp
 %endif
 BuildRequires: webkit-sharp-devel
+BuildRequires: clutter-sharp-devel
 #gw not packaged:
-#BuildRequires: clutter-sharp
 #BuildRequires: ubuntuone-sharp
 BuildRequires: libfftw-devel
 BuildRequires: sqlite3-devel
@@ -49,6 +49,7 @@ probably change over time).
  * Alarm Clock – You can use Banshee to wake up or go to sleep to a
    selection of your own music.
  * Awn – Sets the current album cover as banshee icon in awn.
+ * ClutterFlow ? Browse your albums in a cover art flip-book-like view.
  * Cover Wallpaper – Sets the current playing album cover as the GNOME
    desktop wallpaper.
  * LCD – Display track info on a LCD using LCDproc.
@@ -78,6 +79,7 @@ rm -rf %{buildroot}
 %makeinstall_std
 %find_lang %name
 rm -f %buildroot%_libdir/banshee-1/Extensions/lib*a
+ln -sf %_libdir/clutter-sharp/* %buildroot%_libdir/banshee-1/Extensions/
 
 %clean
 rm -rf %{buildroot}
@@ -87,6 +89,7 @@ rm -rf %{buildroot}
 %doc README
 %_libdir/banshee-1/Extensions/Banshee.AlarmClock.dll*
 %_libdir/banshee-1/Extensions/Banshee.Awn.dll*
+%_libdir/banshee-1/Extensions/Banshee.ClutterFlow.dll*
 %_libdir/banshee-1/Extensions/Banshee.CoverWallpaper.dll*
 %_libdir/banshee-1/Extensions/Banshee.LCD.dll*
 %_libdir/banshee-1/Extensions/Banshee.Lirc.dll*
@@ -97,7 +100,10 @@ rm -rf %{buildroot}
 %_libdir/banshee-1/Extensions/Banshee.RadioStationFetcher.dll*
 %_libdir/banshee-1/Extensions/Banshee.Streamrecorder.dll*
 %_libdir/banshee-1/Extensions/Banshee.Telepathy.dll*
+%_libdir/banshee-1/Extensions/ClutterFlow.dll*
 %_libdir/banshee-1/Extensions/Mirage.dll*
+%_libdir/banshee-1/Extensions/clutter*sharp.dll*
 %_libdir/banshee-1/Extensions/liblircglue.so
+%_libdir/banshee-1/Extensions/glib-sharp.dll*
 %_libdir/banshee-1/Extensions/libmirageaudio.so
 %_datadir/gnome/help/banshee/C/AlarmClock*
