@@ -1,20 +1,18 @@
 %define name banshee-community-extensions
-%define version 1.8.0
-%define release %mkrel 2
+%define version 2.0.0
+%define release %mkrel 1
 
 Summary: Contributed extensions for the Banshee media player
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://download.banshee.fm/%name/%version/%{name}-%{version}.tar.bz2
-Patch0: banshee-community-extensions-libgl.patch
-#Source0: %name-%git.tar.xz
-#gw mirage is GPL, all others MIT
+#Patch0: banshee-community-extensions-libgl.patch
 License: MIT and GPLv2+
 Group: Sound
 Url: http://banshee-project.org/download/extensions/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: banshee-devel >= 1.7.6
+BuildRequires: banshee-devel >= %{version}
 BuildRequires: mono-devel
 BuildRequires: lirc-devel
 BuildRequires: gnome-sharp2-devel
@@ -73,15 +71,14 @@ probably change over time).
 %build
 #gw to make mcs accept Unicode symbols
 export LC_ALL=en_US.UTF-8
-%configure2_5x --with-vendor-build-id="Mandriva Linux %mandriva_release"
+%configure2_5x --with-vendor-build-id="%product_distribution %product_version"
 %make
 
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-%find_lang %name
-rm -f %buildroot%_libdir/banshee-1/Extensions/lib*a
-ln -sf %_libdir/clutter-sharp/* %buildroot%_libdir/banshee-1/Extensions/
+%find_lang %name --with-gnome --all-name
+rm -f %buildroot%_libdir/banshee/Extensions/lib*a
 
 %clean
 rm -rf %{buildroot}
@@ -89,23 +86,5 @@ rm -rf %{buildroot}
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README
-%_libdir/banshee-1/Extensions/Banshee.AlarmClock.dll*
-%_libdir/banshee-1/Extensions/Banshee.Awn.dll*
-%_libdir/banshee-1/Extensions/Banshee.ClutterFlow.dll*
-%_libdir/banshee-1/Extensions/Banshee.CoverWallpaper.dll*
-%_libdir/banshee-1/Extensions/Banshee.LCD.dll*
-%_libdir/banshee-1/Extensions/Banshee.Lirc.dll*
-%_libdir/banshee-1/Extensions/Banshee.LiveRadio.dll*
-%_libdir/banshee-1/Extensions/Banshee.Lyrics.dll*
-%_libdir/banshee-1/Extensions/Banshee.Magnatune.dll*
-%_libdir/banshee-1/Extensions/Banshee.Mirage.dll*
-%_libdir/banshee-1/Extensions/Banshee.RadioStationFetcher.dll*
-%_libdir/banshee-1/Extensions/Banshee.Streamrecorder.dll*
-%_libdir/banshee-1/Extensions/Banshee.Telepathy.dll*
-%_libdir/banshee-1/Extensions/ClutterFlow.dll*
-%_libdir/banshee-1/Extensions/Mirage.dll*
-%_libdir/banshee-1/Extensions/clutter*sharp.dll*
-%_libdir/banshee-1/Extensions/liblircglue.so
-%_libdir/banshee-1/Extensions/glib-sharp.dll*
-%_libdir/banshee-1/Extensions/libmirageaudio.so
-%_datadir/gnome/help/banshee/C/AlarmClock*
+%_libdir/banshee/Extensions/*
+%_datadir/%name
