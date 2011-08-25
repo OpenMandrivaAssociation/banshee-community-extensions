@@ -1,5 +1,5 @@
 %define name banshee-community-extensions
-%define version 2.0.1
+%define version 2.1.1
 %define release %mkrel 1
 
 Summary: Contributed extensions for the Banshee media player
@@ -12,7 +12,7 @@ License: MIT and GPLv2+
 Group: Sound
 Url: http://banshee-project.org/download/extensions/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: banshee-devel >= %{version}
+BuildRequires: banshee-devel >= 2.1
 BuildRequires: mono-devel
 BuildRequires: lirc-devel
 BuildRequires: gnome-sharp2-devel
