@@ -1,5 +1,5 @@
 %define name banshee-community-extensions
-%define version 2.1.1
+%define version 2.1.3
 %define release %mkrel 1
 
 Summary: Contributed extensions for the Banshee media player
@@ -89,10 +89,12 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc README NEWS AUTHORS
 %_libdir/banshee/Extensions/Banshee.AlarmClock.dll*
+%_libdir/banshee/Extensions/Banshee.AlbumArtWriter.dll*
 %_libdir/banshee/Extensions/Banshee.Ampache.dll*
 %_libdir/banshee/Extensions/Banshee.Awn.dll*
 %_libdir/banshee/Extensions/Banshee.ClutterFlow.dll*
 %_libdir/banshee/Extensions/Banshee.CoverWallpaper.dll*
+%_libdir/banshee/Extensions/Banshee.DuplicateSongDetector.dll*
 %_libdir/banshee/Extensions/Banshee.Jamendo.dll*
 %_libdir/banshee/Extensions/Banshee.Karaoke.dll*
 %_libdir/banshee/Extensions/Banshee.LastfmFingerprint.dll*
@@ -113,5 +115,4 @@ rm -rf %{buildroot}
 %_libdir/banshee/Extensions/liblastfmfpbridge.so
 %_libdir/banshee/Extensions/liblircglue.so
 %_libdir/banshee/Extensions/libmirageaudio.so
-%_datadir/gnome/help/banshee/C/AlarmClock*
 %_datadir/%name/icons/hicolor/*/categories/jamendo.*
