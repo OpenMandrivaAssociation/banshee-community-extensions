@@ -1,13 +1,12 @@
 %define name banshee-community-extensions
-%define version 2.1.3
-%define release %mkrel 2
+%define version 2.1.4
+%define release %mkrel 1
 
 Summary: Contributed extensions for the Banshee media player
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: http://download.banshee.fm/%name/%version/%{name}-%{version}.tar.bz2
-Patch0: banshee-community-extensions-clutterflow-crash-fix.patch
 #gw mirage is GPL, all others MIT
 License: MIT and GPLv2+
 Group: Sound
