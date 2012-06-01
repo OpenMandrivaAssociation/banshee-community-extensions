@@ -95,6 +95,7 @@ rm -rf %{buildroot}
 %_libdir/banshee/Extensions/Banshee.ClutterFlow.dll*
 %_libdir/banshee/Extensions/Banshee.CoverWallpaper.dll*
 %_libdir/banshee/Extensions/Banshee.DuplicateSongDetector.dll*
+%_libdir/banshee/Extensions/Banshee.FolderSync.dll*
 %_libdir/banshee/Extensions/Banshee.Jamendo.dll*
 %_libdir/banshee/Extensions/Banshee.Karaoke.dll*
 %_libdir/banshee/Extensions/Banshee.LastfmFingerprint.dll*
