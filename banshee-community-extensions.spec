@@ -62,7 +62,7 @@ probably change over time).
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 #gw to make mcs accept Unicode symbols
