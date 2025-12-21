@@ -13,6 +13,11 @@ Source0:	http://download.banshee.fm/%{name}/%{version}/%{name}-%{version}.tar.bz
 License:	MIT and GPLv2+
 Group:		Sound
 Url:		https://banshee-project.org/download/extensions/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	banshee-devel >= %{banshee_version}
 BuildRequires:	mono-devel
 BuildRequires:	lirc-devel
