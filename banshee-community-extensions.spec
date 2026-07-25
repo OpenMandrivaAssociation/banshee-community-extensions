@@ -1,13 +1,13 @@
 %define name	banshee-community-extensions
 %define version	2.4.0
-%define release 4
+%define release 5
 
 %define banshee_version	2.4.0
 
 Summary:	Contributed extensions for the Banshee media player
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel %{release}
+Release:	%{release}.1
 Source0:	http://download.banshee.fm/%{name}/%{version}/%{name}-%{version}.tar.bz2
 #gw mirage is GPL, all others MIT
 License:	MIT and GPLv2+
